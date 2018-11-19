@@ -714,27 +714,7 @@ main() {
         dep_install_list+=("${OPENPYN_DEPS[@]}")
     fi
 
-    install_dependent_packages dep_install_list[@]
-    unset dep_install_list
-
-	echo -e "Creating build directory ${BUILD_DIR}"
-	rm -rf "${BUILD_DIR}"
-	mkdir "${BUILD_DIR}"
-	cd "${BUILD_DIR}"
-
-
-	echo -e "Clone SmartGW git repository"
-	cd "${BUILD_DIR}"
-	git clone https://github.com/mrahmadt/SmartGW.git
-
-
-	install_lighttpd
-
-	install_smartgw
-
-	configure_sudo
-
-	install_openpyn
+	install_dnsmasq
 
 	echo ""
 	echo ""
